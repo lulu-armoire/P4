@@ -1,0 +1,26 @@
+# Práctica 4: Sistemas Operativos en Tiempo Real
+
+El objetivo de esta práctica es entender el funcionamiento de un sistema operativo utilizando FreeRTOS en el ESP32. 
+
+## Ejercicio 1
+
+#### Código está en GitHub
+
+### Resultado de la salida
+El programa genera dos tareas las cuales muestran mensajes en el monitor de forma alterna. La primera tarea se hace con el  `loop()`, y la segunda se ejecuta en paralelo gracias a FreeRTOS. Entonces vemos dos mensajes diferentes  con intervalos de 1 segundo, eso quiere decir que el sistema operativo está ejecutando las dos tareas en paralelo.
+## Ejercicio 2
+
+En este ejercicio el objetivo es realizar un programa que utilice dos tareas, una enciende un led y otra lo apaga. 
+#### Código en GitHub
+
+### Descripción de la salida
+El programa implementa dos tareas que encienden y apagan un LED de manera sincronizada. Gracias al uso de un semáforo, se garantiza que solo una de las tareas acceda al LED en un momento determinado. En el monitor serie se pueden observar mensajes que indican qué tarea está controlando el LED en cada instante.
+
+### Explicación del funcionamiento
+Para coordinar las dos tareas, se utiliza un semáforo de sincronización. Una tarea se encarga de encender el LED y la otra de apagarlo, asegurando que no intenten acceder al mismo recurso al mismo tiempo. Esto demuestra cómo FreeRTOS permite gestionar correctamente los  sistemas embebidos, evitando posibles conflictos entre tareas.
+
+
+
+
+
+> Written with [StackEdit](https://stackedit.io/).
